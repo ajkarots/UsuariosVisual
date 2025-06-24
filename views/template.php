@@ -1,4 +1,16 @@
 <?php
+include(__DIR__ . '/../funciones/conexion.php');
+session_start();
+if (!isset($_SESSION['usuario'])) {
+    $id = null;
+    session_destroy();
+} else {
+    $id = $_SESSION['usuario'];
+    $sql = "SELECT * FROM usuarios WHERE ID_USU = '$id'";
+    $result = mysqli_query($con, $sql);
+    $usuario = $result->fetch_assoc();
+    mysqli_close($con);
+}
 $action = $_GET['action'] ?? 'inicio';
 $esLogin = ($action === 'login' || $action === 'login.php');
 $esAdmin = ($action === 'admin' || $action === 'admin.php');
@@ -17,20 +29,9 @@ $esAdmin = ($action === 'admin' || $action === 'admin.php');
 
 <body>
     <?php if (!$esLogin): ?>
-        <?php
-        include(__DIR__ . '/../funciones/conexion.php');
-        session_start();
-        if (!isset($_SESSION['usuario'])) {
-            $id= null;
-            session_destroy();
-        
-        }else{
-        $id = $_SESSION['usuario'];
-        $sql = "SELECT * FROM usuarios WHERE ID_USU = '$id'";
-        $result = mysqli_query($con, $sql);
-        $usuario = $result->fetch_assoc();
-        mysqli_close($con);}
-        ?>
+
+
+
         <header class="hero">
             <nav class="nav container">
                 <div class="nav_logo">
@@ -39,11 +40,11 @@ $esAdmin = ($action === 'admin' || $action === 'admin.php');
                     </h3>
                 </div>
                 <ul class="nav_link nav_link--menu">
-                    <?php if($id!=null){?>
+                    <?php if ($id != null) { ?>
                         <li class="nav_items">
                             <a href="index.php?action=admin" class="nav_links">Admin</a>
                         </li>
-                    <?php }?>
+                    <?php } ?>
                     <?php if ($id != null) { ?>
                         <li class="nav_items">
                             <a href="index.php?action=inicio" class="nav_links">Inicio </a>
@@ -52,12 +53,12 @@ $esAdmin = ($action === 'admin' || $action === 'admin.php');
                         <li class="nav_items">
                             <a href="index.php?action=login" class="nav_links">ingresa </a>
                         </li> <?php } ?>
-                    <?php if($id != null){?>
-                            <a href="funciones/salir.php" class="nav_links">Salir </a>
-                       <?php }?> 
+                    <?php if ($id != null) { ?>
+                        <a href="funciones/salir.php" class="nav_links">Salir </a>
+                    <?php } ?>
                 </ul>
-                <?php if($id!=null){ ?>
-                <a href="" class="usuario"><?php echo $usuario['NOM_USU'] ?></a>
+                <?php if ($id != null) { ?>
+                    <a href="" class="usuario"><?php echo $usuario['NOM_USU'] ?></a>
                 <?php } ?>
             </nav>
 
