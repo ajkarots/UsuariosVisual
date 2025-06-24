@@ -3,7 +3,7 @@ require_once 'conexion.php';
 session_start();
 $usuario = $_POST["ID_USU"];
 $contraseña = $_POST["CON_USU"];
-$sql = "SELECT * FROM USUARIOS WHERE ID_USU =? AND CON_USU=?";
+$sql = "SELECT * FROM usuarios WHERE ID_USU =? AND CON_USU=?";
 $stmt = $con->prepare($sql);
 if($stmt){
 $stmt->bind_param("ss",$usuario,$contraseña);
