@@ -43,10 +43,12 @@
                     <tr>
                         <td class="caja_usuarios"><?php echo $tabla['ID_USU'] ?></td>
                         <td class="caja_usuarios"><?php echo $tabla['NOM_USU'] ?></td>
+                        <td class="caja_usuarios"><?php echo $tabla['CON_USU'] ?></td>
                         <td class="caja_usuarios"><?php echo $tabla['ROL_USU'] ?></td>
                                                 <?php if ($usuario['ROL_USU'] == 'admin') { ?>
                         <td><a href="index.php?action=editar&id=<?php echo $tabla['ID_USU'] ?>" class="btn_sql" id="btn_editar" value="['id']">Editar</a></td>
                         <td><a href="funciones/eliminar.php?id=<?php echo $tabla['ID_USU'] ?>" class="btn_sql" id="btn_eliminar" value="['id']">Eliminar</a></td>
+                        <td><a href="funciones/reporteIndividual.php?id=<?php echo $tabla['ID_USU'] ?>" class="btn_sql" id="btn_editar" value="['id']">Reporte</a></td>
                         <?php } ?>
                         
                         
@@ -59,13 +61,16 @@
                 </table>
             </div>
         </section>
+        
         <?php if($usuario['ROL_USU']=='secretario' ||$usuario['ROL_USU']=='admin' ) {?>
         <a href="funciones/reporteUsuario.php" class="btn_sql_tabla  id="btn_agregar_usuario>Reporte</a>
         <?php } ?>
         <a href="index.php?action=inicio" class="btn_sql_tabla" id="btn_volver">Volver</a>
         <?php if($usuario['ROL_USU']=='admin') {?>
         <a href="index.php?action=agregar" class="btn_sql_tabla" id="btn_agregar_usuario">Agregar</a>
+        <a href="index.php?action=sesiones" class="btn_sql_tabla" id="btn_agregar_sesiones">Sesiones</a>
         <?php } ?>
+
     </main>
     <script src="./JavaScript/scriptAdministracion.js"></script>
 </body>

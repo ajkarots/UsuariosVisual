@@ -5,7 +5,7 @@ $usuario = $_POST['ID_USU'];
 $contraseña = $_POST['CON_USU'];
 
 
-$sql = "SELECT * FROM usuarios WHERE ID_USU = ?";
+$sql = "SELECT * FROM usuarios WHERE ID_USU =?";
 $stmt = $con->prepare($sql);
 $stmt->bind_param("s", $usuario);
 $stmt->execute();
@@ -54,6 +54,7 @@ if (password_verify($contraseña, $datosUsuario['CON_USU'])) {
     $auditoriaStmt = $con->prepare($auditoriaSql);
     $auditoriaStmt->bind_param("ssi", $usuario, $ip, $intentoNuevo);
     $auditoriaStmt->execute();
+    
 
     if ($intentos >= 3) {
         echo "<script>alert('Usuario bloqueado tras 3 intentos fallidos.'); window.history.back();</script>";

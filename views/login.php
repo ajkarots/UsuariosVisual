@@ -10,7 +10,7 @@
                     <div class="caja_trasera-register">
                         <h3>¿Aun no tienes cuenta?</h3>
                         <p>Registrate para iniciar sesión</p>
-                        <button class="rec" id="btn_registrarse">Registrate</button>
+                        <button class="rec" id="btn_registrarse"><a href="index.php?action=registrar">Registrate</a></button>
                         <br>
                         <br>
                         <button class="rec" id="btn_entrar"><a href="index.php?action=inicio">Salir</a></button>
