@@ -1,9 +1,8 @@
 <?php
 require_once 'conexion.php';
 session_start();
-
-$usuario = $_POST["ID_USU"];
-$contraseña = $_POST["CON_USU"];
+$usuario = $_POST['ID_USU'];
+$contraseña = $_POST['CON_USU'];
 
 
 $sql = "SELECT * FROM usuarios WHERE ID_USU = ?";
@@ -25,9 +24,7 @@ if ($datosUsuario['INT_USU'] >= 3) {
     exit;
 }
 
-
-if ($contraseña === $datosUsuario['CON_USU']) {
-
+if (password_verify($contraseña, $datosUsuario['CON_USU'])) {
     $resetSql = "UPDATE usuarios SET INT_USU = 0 WHERE ID_USU = ?";
     $resetStmt = $con->prepare($resetSql);
     $resetStmt->bind_param("s", $usuario);
