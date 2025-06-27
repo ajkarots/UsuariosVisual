@@ -23,5 +23,5 @@ while($fila=$stmt->fetch_object()){
     $pdf->Cell(50,10,$ROL_USU,1);
     $pdf->Ln();
 }
-$pdf->Output('D', 'reporte_estudiantes.pdf');  
+$pdf->Output('D', 'Reporte_usuarios.pdf');  
 ?>

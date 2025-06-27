@@ -60,7 +60,9 @@ $esLogin  = in_array($action, ['login','login.php']);
     <?php if ($id): ?>
       <div class="site-nav__user">
         
-       <h3>usuario : <?= htmlspecialchars($usuario['NOM_USU'], ENT_QUOTES, 'UTF-8') ?> </h3>
+       <h3> <?= htmlspecialchars($usuario['ROL_USU'], ENT_QUOTES, 'UTF-8') ?>   : <?= htmlspecialchars($usuario['NOM_USU'], ENT_QUOTES, 'UTF-8') ?>
+        </h3>
+       
       </div>
     <?php endif; ?>
   </nav>

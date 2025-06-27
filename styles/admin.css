@@ -88,7 +88,7 @@ body {
  TABLA DE ADMINISTRACIÓN
 =============================================*/
 .contenedor_administracion {
-  max-width: 960px;
+  max-width: 1200px;
   margin: 0 auto;
   background: #fff;
   border: 2px solid var(--uta-red);
@@ -543,4 +543,9 @@ color: #ffffff;
 }
 .formulario_register {
   display: none;
+}
+
+.botones_administracion{
+margin-top: 10px;
+margin-left: 550px;
 }
