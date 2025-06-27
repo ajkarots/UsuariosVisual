@@ -1,53 +1,54 @@
+<section class="editar">
+  <?php
+    include(__DIR__ . '/../funciones/conexion.php');
+    $id = $_GET['id'];
+    $sql = "SELECT * FROM `usuarios` WHERE `ID_USU` = '$id'";
+    $result = mysqli_query($con, $sql);
+    $usuario = $result->fetch_assoc();
+    mysqli_close($con);
+  ?>
+  <div class="editar__header">
+    <h2 class="editar__username"><?= htmlspecialchars($usuario['NOM_USU']) ?></h2>
+    <h3 class="editar__title">Editar Usuario</h3>
+  </div>
 
-<body>
-    <main>
-        <section class="editar">
-        <?php
-                include(__DIR__ . '/../funciones/conexion.php');
-                $id = $_GET['id'];
-                $sql ="SELECT * FROM `usuarios` WHERE `ID_USU` = '$id'";
-                $result = mysqli_query($con,$sql);
-                $usuario = $result->fetch_assoc();
-                mysqli_close($con);
-                echo '<h2> '.$usuario['NOM_USU'].'</h2>';
-                ?>     
-                <form class="form_editar" action="./funciones/editar_usuario.php" method="POST" id="formulario_editar">
-                <br></br>
-                <h2>Editar</h2>
-                <input class="cuadro_editar" type="text" value="<?php echo $usuario['NOM_USU']?>" id="NOM_USU" name="NOM_USU" >
-                <input class="cuadro_editar" type="password" value="<?php echo $usuario['CON_USU']?>" id="CON_USU" name="CON_USU">
-                <select class="cuadro_editar" name="ROL_USU" id="ROL_USU">
-                    <option value="admin">Administrador</option>
-                    <option value="secretario">Secretario</option>
-                    <option value="usuario">Usuario</option>
-                </select>
-                <input class="cuadro_editar" type="hidden" id="id" value="<?php echo $id;?>" name="id">
-                <button type="submit" class="btn_sql" id="btn_guardar">Guardar</button>
-                <a href="index.php?action=admin" class="btn_sql" id="btn_cancelar">Cancelar</a>  
-                </form>
-           
-                </section> 
-        <section class="knowledge">
-            <div class="knowledge_container container">
-                <div class="knowledge_text">
-                    <h1>Pagina de administracion</h1>
-                </div>
-                <figure class="knowledge_picture">
-                    <img src="./Imagenes/admin.png" class="knowledge_picture_admin">
-                </figure>
-            </div>
-        </section>  
-    </main>
-    <script>
-    document.getElementById('formulario_editar').addEventListener('submit', function(event) {
-let campo1 = document.getElementById('NOM_USU').value;
-let campo2 = document.getElementById('CON_USU').value;
+  <form class="form_editar" action="./funciones/editar_usuario.php" method="POST" id="formulario_editar">
+    <div class="form_group">
+      <label for="NOM_USU">Nombre de usuario</label>
+      <input 
+        class="cuadro_editar" 
+        type="text" 
+        id="NOM_USU" 
+        name="NOM_USU" 
+        value="<?= htmlspecialchars($usuario['NOM_USU']) ?>"
+      >
+    </div>
 
-if (campo1 === '' || campo2 === '' ) {
- event.preventDefault(); // Evita el envío del formulario
- alert('Por favor, completa todos los campos.');
-}
-});
-</script>
+    <div class="form_group">
+      <label for="CON_USU">Contraseña</label>
+      <input 
+        class="cuadro_editar" 
+        type="password" 
+        id="CON_USU" 
+        name="CON_USU" 
+        value="<?= htmlspecialchars($usuario['CON_USU']) ?>"
+      >
+    </div>
 
-</body>
+    <div class="form_group">
+      <label for="ROL_USU">Rol</label>
+      <select class="cuadro_editar" name="ROL_USU" id="ROL_USU">
+        <option value="admin" <?= $usuario['ROL_USU']=='admin'?'selected':'' ?>>Administrador</option>
+        <option value="secretario" <?= $usuario['ROL_USU']=='secretario'?'selected':'' ?>>Secretario</option>
+        <option value="usuario" <?= $usuario['ROL_USU']=='usuario'?'selected':'' ?>>Usuario</option>
+      </select>
+    </div>
+
+    <input type="hidden" name="id" value="<?= $id ?>">
+
+    <div class="form_actions">
+      <button type="submit" class="btn_sql">Guardar</button>
+      <a href="index.php?action=admin" class="btn_sql btn_secondary">Cancelar</a>
+    </div>
+  </form>
+</section>

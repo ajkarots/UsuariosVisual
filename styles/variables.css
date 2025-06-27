@@ -1,0 +1,11 @@
+:root {
+  --uta-red: #C8102E;
+  --uta-red-dark: #8B0018;
+  --gray-light: #F5F5F5;
+  --gray-medium: #E0E0E0;
+  --text-base: #333;
+  --border-radius: 6px;
+}
+
+/* Importa esto al principio de tu style.css */
+

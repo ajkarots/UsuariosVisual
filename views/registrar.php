@@ -12,16 +12,6 @@
                 </form>
            
                 </section> 
-        <section class="knowledge">
-            <div class="knowledge_container container">
-                <div class="knowledge_text">
-                    <h1>Pagina de administracion</h1>
-                </div>
-                <figure class="knowledge_picture">
-                    <img src="./Imagenes/admin.png" class="knowledge_picture_admin">
-                </figure>
-            </div>
-        </section>  
     </main>
     <script>
     document.getElementById('formulario_editar').addEventListener('submit', function(event) {

@@ -3,7 +3,7 @@ class EnlacesPaginas
 {
     public static function enlacesPaginasModel($enlaceModel){
         if($enlaceModel == "inicio" || $enlaceModel == "admin" || $enlaceModel == "editar" || $enlaceModel == "agregar" || $enlaceModel == "login" || $enlaceModel == "sesiones"
-            ||$enlaceModel=="registrar"){
+            ||$enlaceModel=="registrar" || $enlaceModel=="contactanos" ||$enlaceModel=="nosotros"){
             return  "views/" . $enlaceModel.".php";
         }
         else{

@@ -1,0 +1,53 @@
+header{
+    
+    position: relative;
+    background-color: crimson;
+    text-align: center;
+    margin: auto;
+   padding: 10px;
+
+
+}
+
+nav{
+    position: relative;
+    margin: auto;
+    padding: 10px;  
+width: 100%;
+   height: auto;
+   background-color: brown;
+    
+}
+nav ul{
+    position: relative;
+    margin: auto;
+    width: 50%;
+    text-align: center  ;
+}
+nav ul li{
+    display: inline-block;
+    margin: auto;
+    width: 23%;
+    line-height: 50%;
+   
+    
+
+}
+nav ul li a{
+   
+    color: white;
+    text-decoration: none;
+     list-style: georgian;
+    font-size: 20px;
+}
+footer{
+     position: relative;
+    margin: auto;
+    padding: 10px;  
+width: 100%;
+   height: auto;
+   background-color: brown;
+   color: white;
+
+}
+

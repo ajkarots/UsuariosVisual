@@ -26,6 +26,7 @@
                     <tr class="enunciado">
                         <td class="caja_usuarios_1">ID USUARIO</td>
                         <td class="caja_usuarios_1">NOMBRE</td>
+                        <td class="caja_usuarios_1">Contraseña</td>
                         <td class="caja_usuarios_1">ROL</td>
                     </tr>
                     <tr>

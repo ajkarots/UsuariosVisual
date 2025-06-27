@@ -16,6 +16,7 @@ body {
   overflow: hidden;
   padding: var(--padding-container);
 }
+
 .hero {
   width: 100%;
   height: 100%;
@@ -85,11 +86,11 @@ body {
 
 .nav_link {
   margin-left: auto;
-  padding: 0;
+  padding: 10px;
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: max-content;
-  gap: 2em;
+  gap: 4em;
 }
 
 .usuario{
@@ -105,6 +106,7 @@ body {
 .nav_links {
   color: #000000;
   text-decoration: none;
+  margin: 40px;
 }
 
 .nav_menu {
@@ -235,7 +237,7 @@ body {
 /*pagina login*/
 
 .login {
-  background-image: url(../Imagenes/peugeot-308-cc-1.jpg);
+  background-image: url(../Images/uta_fisei.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

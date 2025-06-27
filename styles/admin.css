@@ -1,0 +1,546 @@
+/*=============================================
+ Variables de Color (UTA)
+=============================================*/
+:root {
+  --uta-red:       #C8102E;
+  --uta-red-dark:  #8B0018;
+  --gray-light:    #F5F5F5;
+  --gray-medium:   #E0E0E0;
+  --text-base:     #333333;
+  --border-radius: 6px;
+  --transition:    0.2s ease;
+}
+
+/*=============================================
+ Reset / Base
+=============================================*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--gray-light);
+  color: var(--text-base);
+  line-height: 1.5;
+}
+
+/*=============================================
+ HEADER
+=============================================*/
+.site-header {
+  background: var(--uta-red);
+  padding: 12px 0;
+  text-align: center;
+}
+.site-header__img {
+  max-width: 90%;
+  height: auto;
+  border: 4px solid #fff;
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/*=============================================
+ NAVEGACIÓN
+=============================================*/
+.site-nav {
+  background: var(--uta-red-dark);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+}
+.site-nav__list {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 8px 0;
+}
+.site-nav__list li {
+  margin: 0 14px;
+}
+.site-nav__list a {
+  color: #fff;
+  font-weight: 600;
+  font-size: .95rem;
+  padding: 6px 12px;
+  border-radius: var(--border-radius);
+  transition: background var(--transition);
+}
+.site-nav__list a:hover {
+  background: var(--uta-red);
+}
+.site-nav__user {
+  text-align: center;
+  padding: 4px 0;
+  color: #fff;
+  font-size: .9rem;
+}
+
+/*=============================================
+ CONTENIDO PRINCIPAL
+=============================================*/
+.site-main {
+  padding: 24px;
+  min-height: calc(100vh - 160px); /* Ajusta según header+nav */
+}
+
+/*=============================================
+ TABLA DE ADMINISTRACIÓN
+=============================================*/
+.contenedor_administracion {
+  max-width: 960px;
+  margin: 0 auto;
+  background: #fff;
+  border: 2px solid var(--uta-red);
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, .1);
+  overflow: hidden;
+}
+
+.retorno_mysql {
+  width: 100%;
+  border-collapse: collapse;
+}
+.retorno_mysql thead th {
+  background: var(--uta-red);
+  color: #fff;
+  text-transform: uppercase;
+  font-size: .85rem;
+  padding: 10px;
+  border-bottom: 2px solid var(--gray-medium);
+}
+.retorno_mysql tbody td {
+  padding: 10px;
+  border-bottom: 1px solid var(--gray-medium);
+  font-size: .9rem;
+}
+.retorno_mysql tbody tr:nth-child(even) {
+  background: var(--gray-light);
+}
+.retorno_mysql tbody tr:hover {
+  background: #FFE5E5;
+}
+
+/*=============================================
+ BOTONES (GENERAL)
+=============================================*/
+.btn_sql,
+.btn_sql_tabla {
+  display: inline-block;
+  margin: 6px 4px;
+  padding: 8px 16px;
+  background: var(--uta-red);
+  color: #fff;
+  font-size: .9rem;
+  font-weight: 600;
+  border-radius: var(--border-radius);
+  transition: background var(--transition), transform var(--transition);
+  text-align: center;
+}
+.btn_sql:hover,
+.btn_sql_tabla:hover {
+  background: var(--uta-red-dark);
+  transform: translateY(-1px);
+}
+
+/*=============================================
+ BOTONES AL PIE (“Footer Actions”)
+=============================================*/
+.footer-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 20px 0;
+  background: #fff;
+  border-top: 2px solid var(--gray-medium);
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+/*=============================================
+ MEDIA QUERIES (Responsive)
+=============================================*/
+@media (max-width: 768px) {
+  .site-nav__list {
+    flex-wrap: wrap;
+  }
+  .retorno_mysql thead {
+    display: none; /* ocultar encabezado en móviles */
+  }
+  .retorno_mysql,
+  .retorno_mysql tbody,
+  .retorno_mysql tr,
+  .retorno_mysql td {
+    display: block;
+    width: 100%;
+  }
+  .retorno_mysql tr {
+    margin-bottom: 12px;
+  }
+  .retorno_mysql td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+  }
+  .retorno_mysql td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 12px;
+    width: calc(50% - 24px);
+    white-space: nowrap;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+}
+
+/*=============================================
+  Sección “About” – Misión y Visión
+=============================================*/
+.container.about {
+  max-width: 960px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+.container.about > h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--uta-red-dark);
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.about_main {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.about_icons {
+  flex: 1 1 280px;     /* mínimo 280px, se expanden igual */
+  background: #fff;
+  border: 1px solid var(--gray-medium);
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.about_icons:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.about_icons::before {
+  /* Si más adelante añades un <i> o una img dentro, puedes eliminar este pseudo-element */
+  content: '';
+  display: block;
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 1rem;
+  background: var(--uta-red);
+  border-radius: 50%;
+}
+
+.about_title {
+  font-size: 1.25rem;
+  color: var(--uta-red);
+  margin-bottom: 0.75rem;
+}
+
+.about_paragraph {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-base);
+  text-align: justify;
+}
+
+/* Responsive: en pantallas pequeñas apilan verticalmente */
+@media (max-width: 600px) {
+  .about_main {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+/*=============================================
+  Perfil de Desarrollador
+=============================================*/
+.container.about {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+.container.about > .about_paragraph {
+  text-align: center;
+  font-size: 0.95rem;
+  font-style: italic;
+  margin-bottom: 2rem;
+  color: var(--text-base);
+}
+
+.about_main {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.about_icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 0 0 320px;
+  background: #fff;
+  border: 1px solid var(--gray-medium);
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.about_icons:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.img_desarrolladores {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--uta-red);
+  margin-bottom: 1rem;
+}
+
+.about_title {
+  font-size: 1.25rem;
+  color: var(--uta-red);
+  margin-bottom: 0.5rem;
+}
+
+.about_paragraph {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-base);
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive pequeño */
+@media (max-width: 600px) {
+  .about_main {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+/* ------------ Formulario Editar ------------ */
+.editar {
+  max-width: 480px;
+  margin: 2rem auto;
+  background: #fff;
+  border: 2px solid var(--uta-red);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.editar__header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.editar__username {
+  font-size: 1.6rem;
+  color: var(--uta-red-dark);
+  margin-bottom: .25rem;
+}
+
+.editar__title {
+  font-size: 1.1rem;
+  color: var(--text-base);
+}
+
+/* Agrupación de label + input */
+.form_editar .form_group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.form_editar .form_group label {
+  font-weight: 600;
+  margin-bottom: .4rem;
+  font-size: .95rem;
+  color: var(--text-base);
+}
+
+/* Inputs y select a ancho completo */
+.form_editar .cuadro_editar {
+  padding: .6rem 1rem;
+  font-size: .95rem;
+  border: 1px solid var(--gray-medium);
+  border-radius: var(--border-radius);
+  transition: border-color var(--transition);
+  width: 100%;
+}
+
+.form_editar .cuadro_editar:focus {
+  outline: none;
+  border-color: var(--uta-red);
+}
+
+/* Botones de acción */
+.form_editar .form_actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: .75rem;
+  margin-top: 1.5rem;
+}
+
+.form_editar .btn_sql {
+  padding: .6rem 1.2rem;
+}
+
+.form_editar .btn_secondary {
+  background: #fff;
+  color: var(--uta-red-dark);
+  border: 1px solid var(--uta-red);
+  transition: background var(--transition), color var(--transition);
+}
+
+.form_editar .btn_secondary:hover {
+  background: var(--uta-red);
+  color: #fff;
+}
+
+/*pagina login*/
+
+.login {
+  background-image: url(../Images/uta_fisei.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+.mainlog {
+  width: 100%;
+  padding: 20px;
+  margin: auto;
+  margin-top: 100px;
+}
+.contenedor_main {
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
+  position: relative;
+}
+
+.caja_trasera {
+  width: 100%;
+  padding: 0px 10px;
+  display: flex;
+  justify-content: space-around;
+  backdrop-filter: blur(10px);
+  background-color: rgba(119, 119, 119, 0.5);
+  border-radius: 45px 150px;
+}
+
+.caja_trasera div {
+  margin: 90px 40px;
+  color: beige;
+  transition: all 500ms;
+}
+.ini{
+  margin-top: 0;
+}
+.caja_trasera div p,
+.caja_trasera div button {
+  margin-top: 10px;
+  
+}
+
+.rec{
+margin-top: 30px;
+
+}
+.caja_trasera div h3 {
+  font-size: 20px;
+}
+
+.caja_trasera a{
+text-decoration: none;
+color: #ffffff;
+}
+
+.caja_trasera button {
+  padding: 10px 40px;
+  border-radius: 15px 30px;
+  background: transparent;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  color: beige;
+  transition: all 300ms;
+}
+
+.caja_trasera button:hover {
+  background: #000000;
+  color: #000000;
+}
+
+/*formularos*/
+.contenedor_login-register {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+  top: -180px;
+  left: 10px;
+  transition: left 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.contenedor_login-register form {
+  width: 100%;
+  padding: 90px 20px;
+  background: #fff;
+  position: absolute;
+  border-radius: 20px;
+}
+
+.contenedor_login-register form h2 {
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: rgb(85, 85, 85);
+}
+
+.contenedor_login-register form input {
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px;
+  border: none;
+  background-color: #f2f2f2;
+  font-size: 15px;
+}
+
+.contenedor_login-register form button {
+  padding: 10px 40px;
+  margin-top: 40px;
+  border-radius: 15px 30px;
+  border: none;
+  font-size: 15px;
+  background-color: #f2f2f2;
+  cursor: pointer;
+  outline: none;
+}
+
+.formulario_login {
+  opacity: 1;
+  display: block;
+}
+.formulario_register {
+  display: none;
+}
