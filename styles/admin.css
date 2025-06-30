@@ -26,6 +26,10 @@ body {
   line-height: 1.5;
 }
 
+.rec{
+  text-decoration: none;
+  color: #fff;
+}
 /*=============================================
  HEADER
 =============================================*/
@@ -126,6 +130,7 @@ body {
 =============================================*/
 .btn_sql,
 .btn_sql_tabla {
+  text-decoration: none;
   display: inline-block;
   margin: 6px 4px;
   padding: 8px 16px;
@@ -378,6 +383,7 @@ body {
 
 /* Inputs y select a ancho completo */
 .form_editar .cuadro_editar {
+  margin-top: 10px;
   padding: .6rem 1rem;
   font-size: .95rem;
   border: 1px solid var(--gray-medium);

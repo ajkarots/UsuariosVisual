@@ -1,4 +1,5 @@
-<section class="editar">
+
+  <section class="editar">
   <?php
     include(__DIR__ . '/../funciones/conexion.php');
     $ced = $_GET['ced'];
@@ -21,6 +22,7 @@
         id="NOM_EST" 
         name="NOM_EST" 
         value="<?= htmlspecialchars($usuario['NOM_EST']) ?>"
+        required
       >
     </div>
 
@@ -32,6 +34,7 @@
         id="APE_EST" 
         name="APE_EST" 
         value="<?= htmlspecialchars($usuario['APE_EST']) ?>"
+        required
       >
     </div>
 
@@ -43,6 +46,8 @@
         id="TEL_EST" 
         name="TEL_EST" 
         value="<?= htmlspecialchars($usuario['TEL_EST']) ?>"
+        required
+        maxlength="10"
       >
     </div>
 
@@ -54,6 +59,7 @@
         id="DIR_EST" 
         name="DIR_EST" 
         value="<?= htmlspecialchars($usuario['DIR_EST']) ?>"
+        required
       >
     </div>
 
@@ -65,3 +71,4 @@
     </div>
   </form>
 </section>
+

@@ -41,7 +41,11 @@
                     <tr>
                         <td class="caja_usuarios"><?php echo $tabla['ID_AUD'] ?></td>
                         <td class="caja_usuarios"><?php echo $tabla['ID_USU'] ?></td>
-                        <td class="caja_usuarios"><?php echo $tabla['EXITO'] ?></td>
+                        <td class="caja_usuarios"><?php if($tabla['EXITO'] == '1'){
+                            echo 'Si';
+                        }
+                        else{ echo 'No';}
+                        ?></td>
                         <td class="caja_usuarios"><?php echo $tabla['IP_USUARIO'] ?></td>
                         <td class="caja_usuarios"><?php echo $tabla['INTENTO_NRO'] ?></td>
                     </tr>

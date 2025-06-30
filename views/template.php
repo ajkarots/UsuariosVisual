@@ -46,15 +46,15 @@ $esLogin  = in_array($action, ['login','login.php']);
   <nav class="site-nav">
     <ul class="site-nav__list">
       <?php if ($id): ?>
-        <li><a href="index.php?action=admin">Servicios</a></li>
+        <li><a href="index.php?action=admin" class="rec">Servicios</a></li>
       <?php endif; ?>
-      <li><a href="index.php?action=inicio">Inicio</a></li>
-      <li><a href="index.php?action=nosotros">Nosotros</a></li>
-      <li><a href="index.php?action=contactanos">Contáctanos</a></li>
+      <li><a href="index.php?action=inicio" class="rec">Inicio</a></li>
+      <li><a href="index.php?action=nosotros" class="rec">Nosotros</a></li>
+      <li><a href="index.php?action=contactanos" class="rec">Contáctanos</a></li>
       <?php if (! $id): ?>
         <li><a href="index.php?action=login">Ingresa</a></li>
       <?php else: ?>
-        <li><a href="funciones/salir.php">Salir</a></li>
+        <li><a href="funciones/salir.php" class="rec">Salir</a></li>
       <?php endif; ?>
     </ul>
     <?php if ($id): ?>
@@ -77,6 +77,9 @@ $esLogin  = in_array($action, ['login','login.php']);
     ?>
   </section>
 </main>
-
+<script src="JavaScript/editarEstudiante.js"></script>
+<script src="JavaScript/estudiante.js"></script>
+<script src="JavaScript/agregarUsuarioScript.js"></script>
+<script src="JavaScript/editarUsuarioScript.js"></script>
 </body>
 </html>
