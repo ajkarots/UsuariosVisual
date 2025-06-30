@@ -81,5 +81,6 @@ $esLogin  = in_array($action, ['login','login.php']);
 <script src="JavaScript/estudiante.js"></script>
 <script src="JavaScript/agregarUsuarioScript.js"></script>
 <script src="JavaScript/editarUsuarioScript.js"></script>
+<script src="JavaScript/registroUsuario.js"></script>
 </body>
 </html>
