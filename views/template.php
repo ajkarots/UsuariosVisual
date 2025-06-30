@@ -52,7 +52,7 @@ $esLogin  = in_array($action, ['login','login.php']);
       <li><a href="index.php?action=nosotros" class="rec">Nosotros</a></li>
       <li><a href="index.php?action=contactanos" class="rec">Contáctanos</a></li>
       <?php if (! $id): ?>
-        <li><a href="index.php?action=login">Ingresa</a></li>
+        <li><a href="index.php?action=login" class="rec">Ingresa</a></li>
       <?php else: ?>
         <li><a href="funciones/salir.php" class="rec">Salir</a></li>
       <?php endif; ?>
