@@ -125,6 +125,29 @@ body {
   background: #FFE5E5;
 }
 
+.retorno_mysql2{
+  width: 100%;
+  border-collapse: collapse;
+}
+.retorno_mysql2 thead th {
+  background: var(--uta-red);
+  color: #fff;
+  text-transform: uppercase;
+  font-size: .85rem;
+  padding: 10px;
+  border-bottom: 2px solid var(--gray-medium);
+}
+.retorno_mysql2 tbody td {
+  padding: 10px;
+  border-bottom: 1px solid var(--gray-medium);
+  font-size: .9rem;
+}
+.retorno_mysql2 tbody tr:nth-child(even) {
+  background: var(--gray-light);
+}
+.retorno_mysql2 tbody tr:hover {
+  background: #FFE5E5;
+}
 /*=============================================
  BOTONES (GENERAL)
 =============================================*/

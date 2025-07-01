@@ -43,6 +43,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 return;
             }
 
+            
+
             if (!validarCedulaEcuatoriana(cedula)) {
                 event.preventDefault();
                 alert('La cédula ingresada no es válida.');

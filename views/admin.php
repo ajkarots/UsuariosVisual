@@ -21,6 +21,7 @@
 
         <div class="contenedor_administracion">
             <h2>Usuarios</h2>
+            <input type="text" id="buscador_usuarios" class="input_buscador" placeholder="Buscar usuario...">
             <table class="retorno_mysql">
                 <thead>
                     <tr>
@@ -85,7 +86,9 @@
 
     <section class="contenedor_administracion">
         <h2>Listado de Estudiantes</h2>
-        <table class="retorno_mysql">
+        
+        <input type="text" id="buscador_estudiantes" class="input_buscador" placeholder="Buscar estudiante...">
+        <table class="retorno_mysql2">
             <thead>
                 <tr>
                     <th>Cédula</th>
